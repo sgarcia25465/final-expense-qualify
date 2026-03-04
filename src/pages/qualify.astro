@@ -1,0 +1,746 @@
+---
+
+---
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="icon" href="/favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="noindex, nofollow" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<title>Check Your Eligibility — Final Expense Benefit</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		:root {
+			--primary: #c62828;
+			--primary-dark: #8e1a1a;
+			--primary-light: #ef5350;
+			--dark: #1a1a1a;
+			--dark-gray: #3d3d3d;
+			--medium-gray: #6b6b6b;
+			--light-gray: #e0e0e0;
+			--very-light: #f8f8f8;
+			--white: #ffffff;
+			--green: #2e7d32;
+			--green-light: #e8f5e9;
+		}
+
+		html, body {
+			overflow-x: hidden;
+		}
+
+		body {
+			font-family: 'Outfit', sans-serif;
+			color: var(--dark);
+			background: var(--very-light);
+			line-height: 1.6;
+			min-height: 100vh;
+		}
+
+		/* ─── TOP BAR ─── */
+		.top-bar {
+			background: var(--primary);
+			color: var(--white);
+			text-align: center;
+			padding: 0.55rem 1rem;
+			font-size: 0.85rem;
+			font-weight: 600;
+			letter-spacing: 0.02em;
+		}
+
+		/* ─── HEADER ─── */
+		header {
+			background: var(--white);
+			padding: 1rem 0;
+			box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+		}
+
+		.header-inner {
+			max-width: 860px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0 1.5rem;
+		}
+
+		.header-tagline {
+			font-size: 1.25rem;
+			font-weight: 700;
+			color: var(--dark);
+		}
+
+		/* ─── REVIEWS SLIDER ─── */
+		.reviews-bar {
+			background: var(--white);
+			border-top: 1px solid var(--light-gray);
+			border-bottom: 1px solid var(--light-gray);
+			padding: 0.9rem 0;
+			overflow: hidden;
+		}
+
+		.reviews-track-wrap {
+			max-width: 860px;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.reviews-track {
+			display: flex;
+			transition: transform 0.5s ease;
+		}
+
+		.review-slide {
+			min-width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 0.75rem;
+			padding: 0 1rem;
+			text-align: center;
+			flex-wrap: wrap;
+		}
+
+		.review-stars {
+			color: #f59e0b;
+			font-size: 1rem;
+			letter-spacing: 2px;
+		}
+
+		.review-text {
+			font-size: 0.9rem;
+			color: var(--dark-gray);
+			font-style: italic;
+		}
+
+		.review-author {
+			font-size: 0.85rem;
+			font-weight: 700;
+			color: var(--primary);
+		}
+
+		.review-dots {
+			display: flex;
+			justify-content: center;
+			gap: 6px;
+			margin-top: 0.5rem;
+		}
+
+		.review-dot {
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			background: var(--light-gray);
+			cursor: pointer;
+			transition: background 0.3s;
+		}
+
+		.review-dot.active {
+			background: var(--primary);
+		}
+
+		/* ─── HERO ─── */
+		.hero {
+			background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #d84315 100%);
+			color: var(--white);
+			text-align: center;
+			padding: 3.5rem 1.5rem 4rem;
+		}
+
+		.hero-eyebrow {
+			display: inline-block;
+			background: rgba(255,255,255,0.15);
+			border: 1px solid rgba(255,255,255,0.3);
+			color: #fff;
+			font-size: 0.8rem;
+			font-weight: 700;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			padding: 0.35rem 1rem;
+			border-radius: 100px;
+			margin-bottom: 1.2rem;
+		}
+
+		.hero h1 {
+			font-size: clamp(1.8rem, 5vw, 2.8rem);
+			font-weight: 800;
+			line-height: 1.15;
+			margin-bottom: 1rem;
+			text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+		}
+
+		.hero h1 em {
+			font-style: normal;
+			color: #ffcdd2;
+		}
+
+		.hero p {
+			font-size: 1.05rem;
+			opacity: 0.9;
+			max-width: 560px;
+			margin: 0 auto 2rem;
+		}
+
+		/* ─── METRICS STRIP ─── */
+		.metrics {
+			background: var(--white);
+			border-top: 3px solid var(--primary);
+			padding: 2rem 1.5rem;
+		}
+
+		.metrics-inner {
+			max-width: 860px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			gap: 1.5rem;
+		}
+
+		.metric {
+			text-align: center;
+		}
+
+		.metric-value {
+			font-size: 2rem;
+			font-weight: 800;
+			color: var(--primary);
+			line-height: 1;
+		}
+
+		.metric-label {
+			font-size: 0.8rem;
+			color: var(--medium-gray);
+			font-weight: 500;
+			margin-top: 0.3rem;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+		}
+
+		/* ─── QUIZ WRAPPER ─── */
+		.quiz-section {
+			max-width: 700px;
+			margin: 0 auto;
+			padding: 2.5rem 1.5rem 4rem;
+		}
+
+		.quiz-card {
+			background: var(--white);
+			border-radius: 20px;
+			box-shadow: 0 4px 32px rgba(0,0,0,0.1);
+			padding: 3rem 2.5rem;
+		}
+
+		/* ─── PROGRESS ─── */
+		.progress-wrap {
+			margin-bottom: 2.5rem;
+		}
+
+		.progress-label {
+			font-size: 1.1rem;
+			font-weight: 700;
+			color: var(--medium-gray);
+			margin-bottom: 0.75rem;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.progress-bar {
+			height: 10px;
+			background: var(--light-gray);
+			border-radius: 100px;
+			overflow: hidden;
+		}
+
+		.progress-fill {
+			height: 100%;
+			background: var(--primary);
+			border-radius: 100px;
+			transition: width 0.4s ease;
+		}
+
+		/* ─── QUESTION STEP ─── */
+		.step {
+			display: none;
+		}
+
+		.step.active {
+			display: block;
+		}
+
+		.step-q {
+			font-size: 1.9rem;
+			font-weight: 800;
+			color: var(--dark);
+			margin-bottom: 0.6rem;
+			line-height: 1.25;
+		}
+
+		.step-sub {
+			font-size: 1.05rem;
+			color: var(--medium-gray);
+			margin-bottom: 2.2rem;
+		}
+
+		.answer-grid {
+			display: grid;
+			gap: 1rem;
+		}
+
+		.answer-grid.two-col {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.answer-btn {
+			background: var(--very-light);
+			border: 3px solid var(--light-gray);
+			border-radius: 14px;
+			padding: 1.4rem 1.5rem;
+			font-family: 'Outfit', sans-serif;
+			font-size: 1.3rem;
+			font-weight: 700;
+			color: var(--dark-gray);
+			cursor: pointer;
+			text-align: center;
+			transition: all 0.18s;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 0.6rem;
+			min-height: 80px;
+		}
+
+		.answer-btn:hover, .answer-btn:active {
+			border-color: var(--primary);
+			color: var(--primary);
+			background: #fff5f5;
+		}
+
+		.answer-btn .icon {
+			font-size: 1.5rem;
+		}
+
+		/* ─── RESULT SCREENS ─── */
+		.result-screen {
+			display: none;
+			text-align: center;
+		}
+
+		.result-screen.active {
+			display: block;
+		}
+
+		.result-icon {
+			font-size: 3.5rem;
+			margin-bottom: 1rem;
+		}
+
+		.result-screen h2 {
+			font-size: 1.6rem;
+			font-weight: 800;
+			margin-bottom: 0.75rem;
+		}
+
+		.result-screen.qualified h2 {
+			color: var(--green);
+		}
+
+		.result-screen.not-qualified h2 {
+			color: var(--dark);
+		}
+
+		.result-screen p {
+			font-size: 0.95rem;
+			color: var(--medium-gray);
+			max-width: 440px;
+			margin: 0 auto 1.8rem;
+		}
+
+		.cta-btn {
+			display: inline-block;
+			background: var(--primary);
+			color: var(--white);
+			font-family: 'Outfit', sans-serif;
+			font-size: 1.05rem;
+			font-weight: 700;
+			padding: 1rem 2.2rem;
+			border-radius: 10px;
+			text-decoration: none;
+			border: none;
+			cursor: pointer;
+			transition: background 0.2s, transform 0.15s;
+			box-shadow: 0 4px 16px rgba(198,40,40,0.35);
+		}
+
+		
+		.cta-note {
+			font-size: 0.78rem;
+			color: var(--medium-gray);
+			margin-top: 0.85rem;
+		}
+		.retake-link {
+			display: inline-block;
+			font-size: 0.95rem;
+			font-weight: 700;
+			color: var(--primary);
+			text-decoration: none;
+			border-bottom: 2px solid rgba(198, 40, 40, 0.25);
+			padding-bottom: 0.1rem;
+		}
+
+		.retake-link:hover {
+			color: var(--primary-dark);
+			border-bottom-color: var(--primary-dark);
+		}
+
+		.qualified-badge {
+			display: inline-block;
+			background: var(--green-light);
+			color: var(--green);
+			font-size: 0.8rem;
+			font-weight: 700;
+			padding: 0.35rem 1rem;
+			border-radius: 100px;
+			margin-bottom: 1rem;
+			text-transform: uppercase;
+			letter-spacing: 0.06em;
+		}
+
+		.payout-box {
+			background: linear-gradient(135deg, #fff5f5 0%, #fce4e4 100%);
+			border: 2px solid #ef9a9a;
+			border-radius: 12px;
+			padding: 1.2rem 1.5rem;
+			margin: 1.5rem 0;
+			text-align: center;
+		}
+
+		.payout-box .payout-label {
+			font-size: 0.78rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+			color: var(--primary);
+			margin-bottom: 0.3rem;
+		}
+
+		.payout-box .payout-amount {
+			font-size: 2.4rem;
+			font-weight: 800;
+			color: var(--primary);
+			line-height: 1.1;
+		}
+
+		.payout-box .payout-desc {
+			font-size: 0.8rem;
+			color: var(--medium-gray);
+			margin-top: 0.3rem;
+		}
+
+		/* ─── TRUST STRIP ─── */
+		.trust-strip {
+			background: var(--very-light);
+			border-top: 1px solid var(--light-gray);
+			padding: 1.5rem 1.5rem;
+			text-align: center;
+		}
+
+		.trust-strip p {
+			font-size: 0.8rem;
+			color: var(--medium-gray);
+		}
+
+		.trust-items {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			flex-wrap: wrap;
+			margin-top: 0.75rem;
+		}
+
+		.trust-item {
+			font-size: 0.8rem;
+			font-weight: 600;
+			color: var(--dark-gray);
+			display: flex;
+			align-items: center;
+			gap: 0.3rem;
+		}
+
+		/* ─── FOOTER ─── */
+		footer {
+			background: var(--dark);
+			color: rgba(255,255,255,0.5);
+			text-align: center;
+			padding: 1.5rem 1rem;
+			font-size: 0.78rem;
+		}
+
+		footer a {
+			color: rgba(255,255,255,0.6);
+			text-decoration: none;
+		}
+
+		/* ─── RESPONSIVE ─── */
+		@media (max-width: 520px) {
+			.hero h1 {
+				font-size: 1.6rem;
+			}
+
+			.quiz-card {
+				padding: 2rem 1.2rem;
+			}
+
+			.step-q {
+				font-size: 1.5rem;
+			}
+
+			.answer-btn {
+				font-size: 1.15rem;
+				padding: 1.2rem 1rem;
+				min-height: 70px;
+			}
+
+			.answer-grid.two-col {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			.payout-box .payout-amount {
+				font-size: 2rem;
+			}
+		}
+	</style>
+</head>
+<body>
+
+<!-- TOP URGENCY BAR -->
+<div class="top-bar">
+	🛡️ Final Expense Benefit — See If You Qualify in Under 2 Minutes
+</div>
+
+<!-- HERO -->
+<section class="hero">
+	<div class="hero-eyebrow">No Medical Exam Required</div>
+	<h1>You May Qualify for Up to<br><em>$25,000 in Final Expense</em> Coverage</h1>
+	<p>Answer 3 quick questions to find out if you're eligible — takes less than 2 minutes.</p>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-section">
+	<div class="quiz-card">
+
+		<!-- PROGRESS -->
+		<div class="progress-wrap" id="progressWrap">
+			<div class="progress-label">
+				<span id="progressText">Question 1 of 3</span>
+				<span id="progressPct">0%</span>
+			</div>
+			<div class="progress-bar">
+				<div class="progress-fill" id="progressFill" style="width: 0%"></div>
+			</div>
+		</div>
+
+		<!-- STEP 1 -->
+		<div class="step active" id="step1">
+			<div class="step-q">Are you a US citizen or permanent resident?</div>
+			<div class="step-sub">This benefit is available to US residents only.</div>
+			<div class="answer-grid two-col">
+				<button class="answer-btn" onclick="nextStep(1, 'yes')">
+					<span class="icon">✅</span> Yes
+				</button>
+				<button class="answer-btn" onclick="nextStep(1, 'no')">
+					<span class="icon">❌</span> No
+				</button>
+			</div>
+		</div>
+
+		<!-- STEP 2 -->
+		<div class="step" id="step2">
+			<div class="step-q">Are you between the ages of 50 and 80?</div>
+			<div class="step-sub">This program is designed for individuals in this age range.</div>
+			<div class="answer-grid two-col">
+				<button class="answer-btn" onclick="nextStep(2, 'yes')">
+					<span class="icon">✅</span> Yes
+				</button>
+				<button class="answer-btn" onclick="nextStep(2, 'no')">
+					<span class="icon">❌</span> No
+				</button>
+			</div>
+		</div>
+
+		<!-- STEP 3 -->
+		<div class="step" id="step3">
+			<div class="step-q">Do you have an active checking or savings account?</div>
+			<div class="step-sub">A bank account is required to receive your benefit.</div>
+			<div class="answer-grid two-col">
+				<button class="answer-btn" onclick="nextStep(3, 'yes')">
+					<span class="icon">✅</span> Yes
+				</button>
+				<button class="answer-btn" onclick="nextStep(3, 'no')">
+					<span class="icon">❌</span> No
+				</button>
+			</div>
+		</div>
+
+		<!-- RESULT: QUALIFIED -->
+		<div class="result-screen qualified" id="resultQualified">
+			<div class="result-icon">🎉</div>
+			<div class="qualified-badge">✔ Pre-Qualified</div>
+			<h2>Congratulations — You Qualify!</h2>
+			<p>Based on your answers, you appear to be eligible for up to <strong>$25,000</strong> in final expense coverage. Call now to confirm your benefit — it only takes 2 minutes.</p>
+
+			<div class="payout-box">
+				<div class="payout-label">Your Estimated Benefit</div>
+				<div class="payout-amount">Up to $25,000</div>
+				<div class="payout-desc">Final Expense Coverage · No Medical Exam Required</div>
+			</div>
+
+			<a href="tel:+18005550199" class="cta-btn">📞 Call Now to Claim Your Benefit</a>
+			<p class="cta-note">🔒 Free call. No obligation. Agents standing by.</p>
+		</div>
+
+		<!-- RESULT: NOT QUALIFIED -->
+		<div class="result-screen not-qualified" id="resultNotQualified">
+			<div class="result-icon">😔</div>
+			<h2>Unfortunately, You May Not Qualify</h2>
+			<p>Based on your answers, you may not meet the eligibility requirements for this program at this time.</p>
+			<p>If you think you made a mistake, <a href="/" class="retake-link">click here to retake the quiz</a>.</p>
+		</div>
+
+	</div>
+</section>
+
+<!-- REVIEW SLIDER -->
+<div class="reviews-bar">
+	<div class="reviews-track-wrap">
+		<div class="reviews-track" id="reviewsTrack">
+
+			<div class="review-slide">
+				<span class="review-stars">★★★★★</span>
+				<span class="review-text">"The process was surprisingly smooth. I had my coverage set up in just a few minutes."</span>
+				<span class="review-author">— David M., Retired Teacher</span>
+			</div>
+
+			<div class="review-slide">
+				<span class="review-stars">★★★★★</span>
+				<span class="review-text">"Quick and easy to understand. I finally have peace of mind knowing my family is protected."</span>
+				<span class="review-author">— Sarah K., Grandmother of 4</span>
+			</div>
+
+			<div class="review-slide">
+				<span class="review-stars">★★★★★</span>
+				<span class="review-text">"Got my benefits confirmed in just 2 minutes! No medical exam required either."</span>
+				<span class="review-author">— Mike R., Age 67</span>
+			</div>
+
+			<div class="review-slide">
+				<span class="review-stars">★★★★★</span>
+				<span class="review-text">"I was worried it would be complicated. It wasn't at all. Highly recommend to anyone my age."</span>
+				<span class="review-author">— Linda P., Age 72</span>
+			</div>
+
+		</div>
+		<div class="review-dots" id="reviewDots">
+			<div class="review-dot active" onclick="goToReview(0)"></div>
+			<div class="review-dot" onclick="goToReview(1)"></div>
+			<div class="review-dot" onclick="goToReview(2)"></div>
+			<div class="review-dot" onclick="goToReview(3)"></div>
+		</div>
+	</div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+	<p>Trusted by thousands of Americans ages 50–80</p>
+	<div class="trust-items">
+		<div class="trust-item">🔒 100% Confidential</div>
+		<div class="trust-item">✅ No Medical Exam</div>
+		<div class="trust-item">⚡ 2-Minute Process</div>
+		<div class="trust-item">📞 Licensed Agents</div>
+	</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+	<p>&copy; 2025 Final Expense Benefit. All rights reserved.</p>
+	<p style="margin-top:0.4rem;"><a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms">Terms of Use</a></p>
+</footer>
+
+<script is:inline>
+	// ─── REVIEWS SLIDER ───
+	let currentReview = 0;
+	const totalReviews = 4;
+	const track = document.getElementById('reviewsTrack');
+	const dots = document.querySelectorAll('.review-dot');
+
+	function goToReview(index) {
+		currentReview = index;
+		track.style.transform = `translateX(-${index * 100}%)`;
+		dots.forEach((d, i) => d.classList.toggle('active', i === index));
+	}
+
+	setInterval(() => {
+		goToReview((currentReview + 1) % totalReviews);
+	}, 4000);
+
+	// ─── QUIZ LOGIC ───
+	const progressSteps = {
+		2: { pct: 33,  label: 'Question 2 of 3' },
+		3: { pct: 66,  label: 'Question 3 of 3' },
+	};
+
+	function updateProgress(step) {
+		const d = progressSteps[step];
+		if (!d) return;
+		document.getElementById('progressText').textContent = d.label;
+		document.getElementById('progressPct').textContent = d.pct + '%';
+		document.getElementById('progressFill').style.width = d.pct + '%';
+	}
+
+	function showStep(stepId) {
+		document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+		document.getElementById(stepId).classList.add('active');
+	}
+
+	function showResult(resultId) {
+		document.getElementById('progressWrap').style.display = 'none';
+		document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+		document.querySelectorAll('.result-screen').forEach(r => r.classList.remove('active'));
+		document.getElementById(resultId).classList.add('active');
+	}
+
+	function nextStep(currentStep, answer) {
+		// Any "no" answer disqualifies immediately
+		if (answer === 'no') {
+			showResult('resultNotQualified');
+			return;
+		}
+
+		if (currentStep === 1) {
+			updateProgress(2);
+			showStep('step2');
+		} else if (currentStep === 2) {
+			updateProgress(3);
+			showStep('step3');
+		} else if (currentStep === 3) {
+			showResult('resultQualified');
+		}
+	}
+</script>
+
+</body>
+</html>
+
+
+
+
