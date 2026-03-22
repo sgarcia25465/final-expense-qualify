@@ -10,8 +10,8 @@
 	<meta name="robots" content="noindex, nofollow" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<title>Claim Your Burial Coverage Benefit — Call Now</title>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+	<title>Seniors: Qualify for $25,000–$40,000 Life Insurance Coverage</title>
 	<style>
 		* {
 			margin: 0;
@@ -19,308 +19,148 @@
 			box-sizing: border-box;
 		}
 
-		:root {
-			--primary: #c62828;
-			--primary-dark: #8e1a1a;
-			--primary-light: #ef5350;
-			--dark: #1a1a1a;
-			--dark-gray: #3d3d3d;
-			--medium-gray: #6b6b6b;
-			--light-gray: #e0e0e0;
-			--very-light: #f8f8f8;
-			--white: #ffffff;
-			--green: #2e7d32;
-			--green-light: #e8f5e9;
-		}
-
 		html, body {
 			overflow-x: hidden;
 		}
 
 		body {
-			font-family: 'Outfit', sans-serif;
-			color: var(--dark);
-			background: var(--very-light);
-			line-height: 1.6;
-			min-height: 100vh;
+			font-family: 'Open Sans', Arial, sans-serif;
+			background: #ffffff;
+			color: #111111;
+			line-height: 1.5;
 		}
 
 		/* ─── TOP BAR ─── */
 		.top-bar {
-			background: var(--primary);
-			color: var(--white);
+			background: #1f4d1f;
+			color: #ffffff;
 			text-align: center;
-			padding: 0.55rem 1rem;
-			font-size: 0.85rem;
-			font-weight: 600;
-			letter-spacing: 0.02em;
+			padding: 0.6rem 1rem;
+			font-size: 0.95rem;
+			font-weight: 700;
+			letter-spacing: 0.01em;
 		}
 
-		/* ─── REVIEWS SLIDER ─── */
-		.reviews-bar {
-			background: var(--white);
-			border-top: 1px solid var(--light-gray);
-			border-bottom: 1px solid var(--light-gray);
-			padding: 0.9rem 0;
-			overflow: hidden;
-		}
-
-		.reviews-track-wrap {
-			max-width: 860px;
+		/* ─── MAIN CONTENT ─── */
+		.main-wrap {
+			max-width: 780px;
 			margin: 0 auto;
-			position: relative;
-			overflow: hidden;
-		}
-
-		.reviews-track {
-			display: flex;
-			transition: transform 0.5s ease;
-		}
-
-		.review-slide {
-			min-width: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 0.75rem;
-			padding: 0 1rem;
+			padding: 2rem 1.25rem 3rem;
 			text-align: center;
-			flex-wrap: wrap;
 		}
 
-		.review-stars {
-			color: #f59e0b;
-			font-size: 1rem;
-			letter-spacing: 2px;
-		}
-
-		.review-text {
-			font-size: 0.9rem;
-			color: var(--dark-gray);
-			font-style: italic;
-		}
-
-		.review-author {
-			font-size: 0.85rem;
-			font-weight: 700;
-			color: var(--primary);
-		}
-
-		.review-dots {
-			display: flex;
-			justify-content: center;
-			gap: 6px;
-			margin-top: 0.5rem;
-		}
-
-		.review-dot {
-			width: 7px;
-			height: 7px;
-			border-radius: 50%;
-			background: var(--light-gray);
-			cursor: pointer;
-			transition: background 0.3s;
-		}
-
-		.review-dot.active {
-			background: var(--primary);
-		}
-
-		/* ─── HERO ─── */
-		.hero {
-			background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #d84315 100%);
-			color: var(--white);
-			text-align: center;
-			padding: 3.5rem 1.5rem 4rem;
-		}
-
-		.hero-eyebrow {
-			display: inline-block;
-			background: rgba(255,255,255,0.15);
-			border: 1px solid rgba(255,255,255,0.3);
-			color: #fff;
-			font-size: 0.8rem;
-			font-weight: 700;
-			letter-spacing: 0.1em;
-			text-transform: uppercase;
-			padding: 0.35rem 1rem;
-			border-radius: 100px;
-			margin-bottom: 1.2rem;
-		}
-
-		.hero h1 {
-			font-size: clamp(1.8rem, 5vw, 2.8rem);
+		/* ─── HEADLINE ─── */
+		.headline {
+			font-size: clamp(1.3rem, 3.8vw, 1.75rem);
 			font-weight: 800;
-			line-height: 1.15;
-			margin-bottom: 1rem;
-			text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+			line-height: 1.3;
+			color: #0a0a2a;
+			margin-bottom: 1.5rem;
+			max-width: 100%;
 		}
 
-		.hero h1 em {
-			font-style: normal;
-			color: #ffcdd2;
+		.headline .attention {
+			color: #c94c00;
 		}
 
-		.hero p {
+		.headline .money {
+			color: #1a8a1a;
+		}
+
+		/* ─── HERO IMAGE ─── */
+		.hero-img {
+			width: 90%;
+			max-width: 468px;
+			border-radius: 6px;
+			display: block;
+			margin: 0 auto 1.5rem;
+		}
+
+		/* ─── SUBTEXT ─── */
+		.subtext {
 			font-size: 1.05rem;
-			opacity: 0.9;
-			max-width: 560px;
+			color: #222222;
+			font-weight: 600;
+			max-width: 620px;
 			margin: 0 auto 2rem;
 		}
 
-		/* ─── CALL SECTION ─── */
-		.call-section {
-			max-width: 700px;
-			margin: 0 auto;
-			padding: 2.5rem 1.5rem 4rem;
-		}
-
-		.call-card {
-			background: var(--white);
-			border-radius: 20px;
-			box-shadow: 0 4px 32px rgba(0,0,0,0.1);
-			padding: 3rem 2.5rem;
+		/* ─── CALL BAR ─── */
+		.call-bar {
+			background: #1a3a6e;
+			border-radius: 6px;
+			padding: 1.4rem 1.5rem 1.8rem;
 			text-align: center;
 		}
 
-		.call-icon {
-			font-size: 3.5rem;
-			margin-bottom: 1rem;
-		}
-
-		.call-card h2 {
-			font-size: 1.7rem;
-			font-weight: 800;
-			color: var(--dark);
-			margin-bottom: 0.75rem;
-		}
-
-		.call-card p {
-			font-size: 0.95rem;
-			color: var(--medium-gray);
-			max-width: 440px;
-			margin: 0 auto 1.8rem;
-		}
-
-		.payout-box {
-			background: linear-gradient(135deg, #fff5f5 0%, #fce4e4 100%);
-			border: 2px solid #ef9a9a;
-			border-radius: 12px;
-			padding: 1.2rem 1.5rem;
-			margin: 0 0 1.8rem;
-			text-align: center;
-		}
-
-		.payout-box .payout-label {
-			font-size: 0.78rem;
+		.call-bar-label {
+			color: #ffffff;
+			font-size: 1rem;
 			font-weight: 700;
 			text-transform: uppercase;
-			letter-spacing: 0.08em;
-			color: var(--primary);
-			margin-bottom: 0.3rem;
+			letter-spacing: 0.06em;
+			margin-bottom: 1.2rem;
 		}
 
-		.payout-box .payout-amount {
-			font-size: 2.4rem;
-			font-weight: 800;
-			color: var(--primary);
-			line-height: 1.1;
-		}
-
-		.payout-box .payout-desc {
-			font-size: 0.8rem;
-			color: var(--medium-gray);
-			margin-top: 0.3rem;
-		}
-
-		.cta-btn {
+		.call-btn {
 			display: inline-block;
-			background: var(--primary);
-			color: var(--white);
-			font-family: 'Outfit', sans-serif;
-			font-size: 1.15rem;
-			font-weight: 700;
-			padding: 1.1rem 2.5rem;
-			border-radius: 10px;
+			background: #22aa22;
+			color: #ffffff;
+			font-family: 'Open Sans', Arial, sans-serif;
+			font-size: 1.25rem;
+			font-weight: 800;
+			padding: 1rem 2.8rem;
+			border-radius: 6px;
 			text-decoration: none;
-			border: none;
-			cursor: pointer;
+			letter-spacing: 0.02em;
+			text-transform: uppercase;
+			box-shadow: 0 4px 18px rgba(0,0,0,0.25);
 			transition: background 0.2s, transform 0.15s;
-			box-shadow: 0 4px 16px rgba(198,40,40,0.35);
 		}
 
-		.cta-btn:hover {
-			background: var(--primary-dark);
-			transform: translateY(-1px);
+		.call-btn:hover {
+			background: #1a8a1a;
+			transform: translateY(-2px);
 		}
 
-		.cta-note {
+		.call-note {
+			color: rgba(255,255,255,0.75);
 			font-size: 0.78rem;
-			color: var(--medium-gray);
-			margin-top: 0.85rem;
-		}
-
-		/* ─── TRUST STRIP ─── */
-		.trust-strip {
-			background: var(--very-light);
-			border-top: 1px solid var(--light-gray);
-			padding: 1.5rem 1.5rem;
-			text-align: center;
-		}
-
-		.trust-strip p {
-			font-size: 0.8rem;
-			color: var(--medium-gray);
-		}
-
-		.trust-items {
-			display: flex;
-			justify-content: center;
-			gap: 2rem;
-			flex-wrap: wrap;
-			margin-top: 0.75rem;
-		}
-
-		.trust-item {
-			font-size: 0.8rem;
-			font-weight: 600;
-			color: var(--dark-gray);
-			display: flex;
-			align-items: center;
-			gap: 0.3rem;
+			margin-top: 0.8rem;
 		}
 
 		/* ─── FOOTER ─── */
 		footer {
-			background: var(--dark);
-			color: rgba(255,255,255,0.5);
 			text-align: center;
-			padding: 1.5rem 1rem;
-			font-size: 0.78rem;
+			padding: 1.5rem 1.5rem;
+			color: #888888;
+			border-top: 1px solid #e0e0e0;
+			margin-top: 2rem;
+			max-width: 780px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		footer a {
-			color: rgba(255,255,255,0.6);
-			text-decoration: none;
+			color: #555555;
+			text-decoration: underline;
+			font-size: 0.78rem;
 		}
 
-		/* ─── RESPONSIVE ─── */
+		.disclaimer {
+			font-size: 0.65rem;
+			line-height: 1.6;
+			color: #aaaaaa;
+			margin-bottom: 0.5rem;
+		}
+
 		@media (max-width: 520px) {
-			.hero h1 {
-				font-size: 1.6rem;
+			.headline {
+				font-size: 1.35rem;
 			}
-
-			.call-card {
-				padding: 2rem 1.2rem;
-			}
-
-			.payout-box .payout-amount {
-				font-size: 2rem;
-			}
-
-			.cta-btn {
-				font-size: 1rem;
-				padding: 1rem 1.8rem;
+			.call-btn {
+				font-size: 1.05rem;
+				padding: 0.9rem 1.8rem;
 			}
 		}
 	</style>
@@ -355,111 +195,37 @@
 </head>
 <body>
 
-<!-- TOP URGENCY BAR -->
-<div class="top-bar">
-	🛡️ Burial Coverage Benefit — Agents Standing By Now
-</div>
+<!-- TOP BAR -->
+<div class="top-bar">Last Call For Seniors Before Friday</div>
 
-<!-- HERO -->
-<section class="hero">
-	<div class="hero-eyebrow">No Medical Exam Required</div>
-	<h1>You May Qualify for Up to<br><em>$25,000 in Burial</em> Coverage</h1>
-	<p>Call us now to find out if you're eligible — takes less than 2 minutes.</p>
-</section>
+<!-- MAIN -->
+<div class="main-wrap">
 
-<!-- CALL SECTION -->
-<section class="call-section">
-	<div class="call-card">
+	<!-- HEADLINE -->
+	<p class="headline">
+		<span class="attention">Attention Seniors:</span> You Can Qualify for a 2026 Life Insurance Coverage for Up to <span class="money">$25,000-$40,000</span> For Less Than A Cup Of Coffee
+	</p>
 
-		<div class="call-icon">📞</div>
-		<h2>Call This Number to Claim Your Benefit</h2>
-		<p>Our licensed agents are standing by to confirm your burial coverage benefit. No obligation, completely free.</p>
+	<!-- IMAGE -->
+	<img src="/images/money-grave.png" alt="Final Expense Coverage" class="hero-img" />
 
-		<div class="payout-box">
-			<div class="payout-label">Your Estimated Benefit</div>
-			<div class="payout-amount">Up to $25,000</div>
-			<div class="payout-desc">Burial Coverage · No Medical Exam Required</div>
-		</div>
+	<!-- SUBTEXT -->
+	<p class="subtext">Call now to claim your burial coverage benefit — it only takes about 60 seconds.</p>
 
-		<a href="tel:+18333837370" class="cta-btn">📞 Call (833) 383-7370 Now</a>
-		<p class="cta-note">🔒 Free call. No obligation. Agents standing by.</p>
-
+	<!-- CALL BAR -->
+	<div class="call-bar">
+		<div class="call-bar-label">Call This Number To Claim Your Benefit:</div>
+		<a href="tel:+18333837370" class="call-btn">📞 Call (833) 383-7370 Now</a>
+		<p class="call-note">Free call &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; Licensed agents standing by</p>
 	</div>
-</section>
 
-<!-- REVIEW SLIDER -->
-<div class="reviews-bar">
-	<div class="reviews-track-wrap">
-		<div class="reviews-track" id="reviewsTrack">
-
-			<div class="review-slide">
-				<span class="review-stars">★★★★★</span>
-				<span class="review-text">"The process was surprisingly smooth. I had my coverage set up in just a few minutes."</span>
-				<span class="review-author">— David M., Retired Teacher</span>
-			</div>
-
-			<div class="review-slide">
-				<span class="review-stars">★★★★★</span>
-				<span class="review-text">"Quick and easy to understand. I finally have peace of mind knowing my family is protected."</span>
-				<span class="review-author">— Sarah K., Grandmother of 4</span>
-			</div>
-
-			<div class="review-slide">
-				<span class="review-stars">★★★★★</span>
-				<span class="review-text">"Got my benefits confirmed in just 2 minutes! No medical exam required either."</span>
-				<span class="review-author">— Mike R., Age 67</span>
-			</div>
-
-			<div class="review-slide">
-				<span class="review-stars">★★★★★</span>
-				<span class="review-text">"I was worried it would be complicated. It wasn't at all. Highly recommend to anyone my age."</span>
-				<span class="review-author">— Linda P., Age 72</span>
-			</div>
-
-		</div>
-		<div class="review-dots" id="reviewDots">
-			<div class="review-dot active" onclick="goToReview(0)"></div>
-			<div class="review-dot" onclick="goToReview(1)"></div>
-			<div class="review-dot" onclick="goToReview(2)"></div>
-			<div class="review-dot" onclick="goToReview(3)"></div>
-		</div>
-	</div>
-</div>
-
-<!-- TRUST STRIP -->
-<div class="trust-strip">
-	<p>Trusted by thousands of Americans ages 50–85</p>
-	<div class="trust-items">
-		<div class="trust-item">🔒 100% Confidential</div>
-		<div class="trust-item">✅ No Medical Exam</div>
-		<div class="trust-item">⚡ 2-Minute Process</div>
-		<div class="trust-item">📞 Licensed Agents</div>
-	</div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-	<p>&copy; 2025 Final Expense Benefit. All rights reserved.</p>
-	<p style="margin-top:0.4rem;"><a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms">Terms of Use</a></p>
+	<p class="disclaimer">This website is not affiliated with or endorsed by any government agency. All information provided is for educational purposes only and should not be interpreted as legal, financial, or insurance advice. Insurance eligibility, benefits, and policy details vary by state and by carrier. If you submit your information, a licensed insurance agent may contact you to discuss Final Expense insurance options. Coverage amounts, premiums, and policy features depend on the insurance carrier and your personal qualifications. Coverage is not guaranteed until an application is completed and approved by a licensed insurer. No specific savings, benefits, or payouts are guaranteed through this website. Any examples provided are for illustrative purposes only.</p>
+	<p style="margin-top:0.6rem;"><a href="/terms">Terms &amp; Conditions</a> &nbsp;|&nbsp; <a href="/privacy">Privacy Policy</a></p>
 </footer>
-
-<script is:inline>
-	// ─── REVIEWS SLIDER ───
-	let currentReview = 0;
-	const totalReviews = 4;
-	const track = document.getElementById('reviewsTrack');
-	const dots = document.querySelectorAll('.review-dot');
-
-	function goToReview(index) {
-		currentReview = index;
-		track.style.transform = `translateX(-${index * 100}%)`;
-		dots.forEach((d, i) => d.classList.toggle('active', i === index));
-	}
-
-	setInterval(() => {
-		goToReview((currentReview + 1) % totalReviews);
-	}, 4000);
-</script>
 
 </body>
 </html>
