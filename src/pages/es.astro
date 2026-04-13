@@ -1,0 +1,474 @@
+---
+
+---
+
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/jpeg" href="/images/favicon.jpeg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="noindex, nofollow" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+	<title>Seguro de Gastos Finales — Hasta $25,000 en Cobertura</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html, body {
+			overflow-x: hidden;
+		}
+
+		body {
+			font-family: 'Open Sans', Arial, sans-serif;
+			background: #f7f7f7;
+			color: #111111;
+			line-height: 1.6;
+		}
+
+		/* ─── TOP BAR ─── */
+		.top-bar {
+			background: #b71c1c;
+			color: #ffffff;
+			text-align: center;
+			padding: 0.65rem 1rem;
+			font-size: 0.9rem;
+			font-weight: 700;
+			letter-spacing: 0.01em;
+		}
+
+		/* ─── MAIN WRAP ─── */
+		.main-wrap {
+			max-width: 760px;
+			margin: 0 auto;
+			padding: 0 1.25rem 3rem;
+		}
+
+		/* ─── ARTICLE HEADER ─── */
+		.article-header {
+			text-align: center;
+			padding: 2rem 0 1.5rem;
+			border-bottom: 1px solid #e0e0e0;
+			margin-bottom: 1.5rem;
+		}
+
+		.article-category {
+			font-size: 0.72rem;
+			font-weight: 700;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: #b71c1c;
+			margin-bottom: 0.6rem;
+		}
+
+		.article-title {
+			font-size: clamp(1.5rem, 4vw, 2.1rem);
+			font-weight: 800;
+			color: #0d0d0d;
+			line-height: 1.25;
+			margin-bottom: 0.75rem;
+		}
+
+		.article-subtitle {
+			font-size: 1rem;
+			color: #444;
+			max-width: 600px;
+			margin: 0 auto 1rem;
+			font-weight: 400;
+		}
+
+		.article-meta {
+			font-size: 0.75rem;
+			color: #888;
+		}
+
+		/* ─── HERO IMAGE ─── */
+		.hero-img-wrap {
+			text-align: center;
+			margin-bottom: 1.5rem;
+		}
+
+		.hero-img {
+			width: 100%;
+			max-width: 560px;
+			border-radius: 6px;
+			display: block;
+			margin: 0 auto;
+		}
+
+		.hero-img-caption {
+			font-size: 0.72rem;
+			color: #999;
+			margin-top: 0.4rem;
+		}
+
+		/* ─── BODY COPY ─── */
+		.body-copy {
+			font-size: 1.05rem;
+			color: #1a1a1a;
+			margin-bottom: 1.2rem;
+			line-height: 1.75;
+		}
+
+		.body-copy strong {
+			color: #0d0d0d;
+		}
+
+		.pull-quote {
+			border-left: 4px solid #b71c1c;
+			padding: 0.75rem 1.2rem;
+			margin: 1.5rem 0;
+			background: #fff5f5;
+			font-size: 1.1rem;
+			font-style: italic;
+			color: #333;
+			border-radius: 0 6px 6px 0;
+		}
+
+		/* ─── BENEFITS BOX ─── */
+		.benefits-box {
+			background: #ffffff;
+			border: 1px solid #e0e0e0;
+			border-top: 4px solid #b71c1c;
+			border-radius: 6px;
+			padding: 1.5rem 1.75rem;
+			margin: 1.75rem 0;
+		}
+
+		.benefits-box h3 {
+			font-size: 1rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: 0.06em;
+			color: #b71c1c;
+			margin-bottom: 1rem;
+		}
+
+		.benefits-list {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			gap: 0.65rem;
+		}
+
+		.benefits-list li {
+			display: flex;
+			align-items: flex-start;
+			gap: 0.6rem;
+			font-size: 0.97rem;
+			color: #1a1a1a;
+			font-weight: 600;
+		}
+
+		.benefits-list li::before {
+			content: "✔";
+			color: #2e7d32;
+			font-weight: 900;
+			flex-shrink: 0;
+			margin-top: 0.1rem;
+		}
+
+		/* ─── CTA SECTION ─── */
+		.cta-section {
+			background: #1a3a6e;
+			border-radius: 8px;
+			padding: 1.75rem 1.5rem 2rem;
+			text-align: center;
+			margin: 2rem 0;
+		}
+
+		.cta-section .cta-label {
+			color: #ffffff;
+			font-size: 1rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.06em;
+			margin-bottom: 0.4rem;
+		}
+
+		.cta-section .cta-sublabel {
+			color: rgba(255,255,255,0.75);
+			font-size: 0.88rem;
+			margin-bottom: 1.4rem;
+		}
+
+		.cta-btn {
+			display: inline-block;
+			background: #c62828;
+			color: #ffffff;
+			font-family: 'Open Sans', Arial, sans-serif;
+			font-size: 1.2rem;
+			font-weight: 800;
+			padding: 1rem 2.6rem;
+			border-radius: 6px;
+			text-decoration: none;
+			letter-spacing: 0.01em;
+			box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+			transition: background 0.2s, transform 0.15s;
+			text-transform: uppercase;
+		}
+
+		.cta-btn:hover {
+			background: #8e1a1a;
+			transform: translateY(-2px);
+		}
+
+		.cta-note {
+			color: rgba(255,255,255,0.65);
+			font-size: 0.75rem;
+			margin-top: 0.85rem;
+		}
+
+		/* ─── TESTIMONIALS ─── */
+		.testimonials {
+			margin: 2rem 0;
+		}
+
+		.testimonials h3 {
+			font-size: 1rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: 0.06em;
+			color: #444;
+			margin-bottom: 1rem;
+		}
+
+		.testimonial {
+			background: #ffffff;
+			border: 1px solid #e8e8e8;
+			border-radius: 6px;
+			padding: 1.1rem 1.3rem;
+			margin-bottom: 0.9rem;
+		}
+
+		.testimonial-stars {
+			color: #f59e0b;
+			font-size: 0.95rem;
+			letter-spacing: 2px;
+			margin-bottom: 0.4rem;
+		}
+
+		.testimonial-text {
+			font-size: 0.92rem;
+			font-style: italic;
+			color: #333;
+			margin-bottom: 0.4rem;
+			line-height: 1.6;
+		}
+
+		.testimonial-author {
+			font-size: 0.8rem;
+			font-weight: 700;
+			color: #b71c1c;
+		}
+
+		/* ─── TRUST STRIP ─── */
+		.trust-strip {
+			background: #ffffff;
+			border: 1px solid #e0e0e0;
+			border-radius: 6px;
+			padding: 1rem 1.25rem;
+			text-align: center;
+			margin: 1.5rem 0;
+		}
+
+		.trust-items {
+			display: flex;
+			justify-content: center;
+			gap: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.trust-item {
+			font-size: 0.8rem;
+			font-weight: 700;
+			color: #333;
+			display: flex;
+			align-items: center;
+			gap: 0.3rem;
+		}
+
+		/* ─── FOOTER ─── */
+		footer {
+			text-align: center;
+			padding: 1.5rem 0.5rem;
+			border-top: 1px solid #e0e0e0;
+			margin-top: 1rem;
+		}
+
+		.disclaimer {
+			font-size: 0.63rem;
+			line-height: 1.65;
+			color: #aaaaaa;
+			margin-bottom: 0.6rem;
+			text-align: left;
+		}
+
+		footer .footer-links {
+			font-size: 0.75rem;
+			color: #888;
+			text-align: center;
+		}
+
+		footer .footer-links a {
+			color: #555;
+			text-decoration: underline;
+		}
+
+		/* ─── RESPONSIVE ─── */
+		@media (max-width: 520px) {
+			.article-title {
+				font-size: 1.35rem;
+			}
+			.cta-btn {
+				font-size: 1rem;
+				padding: 0.9rem 1.6rem;
+			}
+		}
+	</style>
+
+	<!-- Meta Pixel Code -->
+	<script is:inline>
+	!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window, document,'script',
+	'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '1658273542083432');
+	fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=1658273542083432&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- End Meta Pixel Code -->
+
+	<!-- Microsoft Clarity -->
+	<script type="text/javascript" is:inline>
+	(function(c,l,a,r,i,t,y){
+		c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+		t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+		y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+	})(window, document, "clarity", "script", "vqr774rh13");
+	</script>
+	<!-- End Microsoft Clarity -->
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+	Beneficio Especial para Adultos Mayores — Verifica Si Calificas en Menos de 2 Minutos
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+	<!-- ARTICLE HEADER -->
+	<div class="article-header">
+		<div class="article-category">Seguro de Gastos Finales</div>
+		<h1 class="article-title">Ayuda a aliviar la carga para tu familia</h1>
+		<p class="article-subtitle">Muchas familias no están preparadas para cubrir los gastos funerarios. Este beneficio puede cambiar eso.</p>
+		<div class="article-meta">Información para residentes de EE.UU. · Sin examen médico requerido</div>
+	</div>
+
+	<!-- HERO IMAGE -->
+	<div class="hero-img-wrap">
+		<img src="/images/espic.png" alt="Cobertura de Gastos Finales" class="hero-img" />
+		<p class="hero-img-caption">Protege a tu familia con hasta $25,000 en cobertura de gastos finales.</p>
+	</div>
+
+	<!-- BODY COPY -->
+	<p class="body-copy">
+		¿Alguna vez has pensado en cómo tu familia cubriría los gastos funerarios si algo te llegara a pasar? Los costos funerarios se acumulan rápidamente — el promedio en los Estados Unidos supera los $9,000 — y la mayoría de las familias no están preparadas para cubrir esa cantidad.
+	</p>
+
+	<div class="pull-quote">
+		"Tu familia merece algo mejor, y tú también. Una despedida digna nunca debería estar fuera de tu alcance."
+	</div>
+
+	<p class="body-copy">
+		Existe un beneficio de seguro de gastos finales diseñado especialmente para adultos mayores entre 50 y 85 años. <strong>No requiere examen médico</strong>, la verificación de elegibilidad es gratuita, y el proceso toma menos de 2 minutos.
+	</p>
+
+	<p class="body-copy">
+		Si calificas, podrías recibir hasta <strong>$25,000 en cobertura</strong> para proteger a tu familia de los gastos de funeral, entierro y otras deudas que podrían quedar pendientes. No dejes que esa responsabilidad recaiga sobre tus seres queridos.
+	</p>
+
+	<!-- BENEFITS BOX -->
+	<div class="benefits-box">
+		<h3>¿Por qué este beneficio?</h3>
+		<ul class="benefits-list">
+			<li>Hasta $25,000 en cobertura de gastos finales</li>
+			<li>Sin examen médico requerido</li>
+			<li>Verificación de elegibilidad completamente gratuita</li>
+			<li>Disponible para residentes de EE.UU. entre 50 y 85 años</li>
+			<li>Proceso rápido — menos de 2 minutos por teléfono</li>
+			<li>Agentes con licencia listos para atenderte</li>
+		</ul>
+	</div>
+
+	<p class="body-copy">
+		No esperes más. Este tipo de cobertura puede darte la tranquilidad de saber que tu familia estará protegida cuando más lo necesite. Llama ahora para hablar con un agente con licencia y verificar si calificas.
+	</p>
+
+	<!-- CTA SECTION -->
+	<div class="cta-section">
+		<div class="cta-label">Habla con un agente ahora</div>
+		<div class="cta-sublabel">Llama gratis para verificar tu elegibilidad — sin compromiso</div>
+		<a href="tel:+18333837370" class="cta-btn">📞 Obtén tu cotización</a>
+		<p class="cta-note">Llamada gratuita &nbsp;·&nbsp; Sin obligación &nbsp;·&nbsp; Agentes disponibles ahora</p>
+	</div>
+
+	<!-- TESTIMONIALS -->
+	<div class="testimonials">
+		<h3>Lo que dicen nuestros clientes</h3>
+
+		<div class="testimonial">
+			<div class="testimonial-stars">★★★★★</div>
+			<p class="testimonial-text">"Fue mucho más fácil de lo que pensé. En minutos ya tenía mi cobertura confirmada. Ahora sé que mi familia estará protegida."</p>
+			<div class="testimonial-author">— María G., 68 años, Texas</div>
+		</div>
+
+		<div class="testimonial">
+			<div class="testimonial-stars">★★★★★</div>
+			<p class="testimonial-text">"Siempre me preocupaba dejarle deudas a mis hijos. Gracias a este seguro, ya no tengo esa carga. El agente fue muy amable y paciente."</p>
+			<div class="testimonial-author">— Roberto S., 72 años, Florida</div>
+		</div>
+
+		<div class="testimonial">
+			<div class="testimonial-stars">★★★★★</div>
+			<p class="testimonial-text">"No requirió examen médico y el proceso fue rapidísimo. Muy recomendado para cualquier persona mayor que quiera proteger a su familia."</p>
+			<div class="testimonial-author">— Carmen L., 64 años, California</div>
+		</div>
+	</div>
+
+	<!-- TRUST STRIP -->
+	<div class="trust-strip">
+		<div class="trust-items">
+			<div class="trust-item">🔒 100% Confidencial</div>
+			<div class="trust-item">✅ Sin Examen Médico</div>
+			<div class="trust-item">⚡ Proceso en 2 Minutos</div>
+			<div class="trust-item">📞 Agentes con Licencia</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+	<div class="main-wrap">
+		<p class="disclaimer">Este sitio web no está afiliado ni respaldado por ninguna agencia gubernamental. Toda la información proporcionada es únicamente con fines educativos y no debe interpretarse como asesoramiento legal, financiero o de seguros. La elegibilidad para el seguro, los beneficios y los detalles de la póliza varían según el estado y la aseguradora. Si envía su información, un agente de seguros con licencia puede comunicarse con usted para hablar sobre las opciones de seguro de gastos finales. Los montos de cobertura, las primas y las características de la póliza dependen de la aseguradora y de sus calificaciones personales. La cobertura no está garantizada hasta que se complete y apruebe una solicitud por parte de una aseguradora con licencia. No se garantizan ahorros, beneficios o pagos específicos a través de este sitio web. Todos los ejemplos proporcionados son solo con fines ilustrativos.</p>
+		<p class="footer-links">
+			<a href="/terms">Términos y Condiciones</a> &nbsp;|&nbsp; <a href="/privacy">Política de Privacidad</a>
+		</p>
+	</div>
+</footer>
+
+</body>
+</html>
