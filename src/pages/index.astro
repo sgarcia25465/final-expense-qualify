@@ -24,78 +24,99 @@
 			flex-direction: column;
 		}
 
-		header {
-			padding: 14px 16px;
-			border-bottom: 1px solid #e0e0e0;
-			background: #fff;
-		}
-
-		header h1 {
-			font-size: 1.35rem;
-			font-weight: 800;
-			color: #111;
-			letter-spacing: -0.02em;
-		}
-
+		/* ── BANNER ── */
 		.banner-wrap {
 			width: 100%;
-			background: #f5f5f5;
+			background: #ffffff;
 		}
 
 		.banner-wrap img {
 			width: 100%;
-			max-width: 640px;
+			max-width: 100%;
 			display: block;
 			margin: 0 auto;
-			object-fit: cover;
 		}
 
-		.main {
-			padding: 28px 20px 20px;
-			flex: 1;
+		/* ── ELIGIBILITY HEADING ── */
+		.elig-heading {
+			padding: 22px 20px 0;
 		}
 
-		.main h2 {
-			font-size: clamp(1.35rem, 5vw, 1.75rem);
+		.elig-small {
+			font-size: clamp(0.95rem, 3vw, 1.1rem);
+			font-weight: 500;
+			color: #333;
+			margin-bottom: 4px;
+		}
+
+		.elig-amount {
+			font-size: clamp(2.4rem, 8vw, 3.2rem);
 			font-weight: 800;
 			color: #111;
-			margin-bottom: 28px;
-			line-height: 1.25;
+			line-height: 1.1;
+			margin-bottom: 2px;
 		}
 
-		.age-label {
-			font-size: 0.85rem;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-			color: #666;
-			margin-bottom: 14px;
+		.elig-amount .yellow-hl {
+			background: #ffff00;
+			padding: 0 6px;
+		}
+
+		.elig-plan {
+			font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+			font-weight: 800;
+			color: #111;
+			margin-bottom: 0;
+		}
+
+		/* ── AGE CARD ── */
+		.age-card {
+			margin: 24px auto 0;
+			max-width: 420px;
+			width: calc(100% - 32px);
+			background: linear-gradient(160deg, #d6eaf8 0%, #e8f4fc 60%, #cde4f5 100%);
+			border-radius: 18px;
+			padding: 24px 20px 28px;
+		}
+
+		.age-heading {
+			font-size: clamp(1.3rem, 5vw, 1.6rem);
+			font-weight: 800;
+			color: #111;
+			margin-bottom: 20px;
 		}
 
 		.age-btn {
 			display: block;
 			width: 100%;
-			max-width: 420px;
-			margin: 0 auto 14px;
-			padding: 20px 16px;
+			margin: 0 auto 12px;
+			padding: 16px;
 			font-family: 'Outfit', Arial, sans-serif;
-			font-size: 1.25rem;
+			font-size: 1.15rem;
 			font-weight: 700;
-			background: #2e7d32;
+			background: #5b9fd4;
 			color: #fff;
 			border: none;
-			border-radius: 10px;
+			border-radius: 8px;
 			cursor: pointer;
 			text-decoration: none;
 			transition: background 0.15s, transform 0.1s;
-			box-shadow: 0 4px 12px rgba(46,125,50,0.3);
 		}
 
+		.age-btn:last-child { margin-bottom: 0; }
+
 		.age-btn:hover, .age-btn:active {
-			background: #1b5e20;
+			background: #3a7fbf;
 			transform: translateY(-1px);
 		}
 
+		/* ── MAIN WRAPPER ── */
+		.main {
+			flex: 1;
+			padding-bottom: 32px;
+		}
+
+		/* ── FOOTER ── */
 		footer {
 			padding: 16px 16px 20px;
 			font-size: 0.75rem;
@@ -142,20 +163,23 @@
 </head>
 <body>
 
-<header>
-	<h1>Assisted Benefits</h1>
-</header>
-
 <div class="banner-wrap">
 	<img src="/images/socialsecurity.png" alt="Burial Coverage Benefit" />
 </div>
 
 <div class="main">
-	<h2>Check Eligibility for a $40,000 Burial Plan</h2>
-	<p class="age-label">Select your age</p>
-	<a href="/congratulations" class="age-btn">50 – 75</a>
-	<a href="/congratulations" class="age-btn">76 – 80</a>
-	<a href="/congratulations" class="age-btn">81+</a>
+	<div class="elig-heading">
+		<p class="elig-small">Check Eligibility for a</p>
+		<p class="elig-amount"><span class="yellow-hl">$40,000</span></p>
+		<p class="elig-plan">Burial Plan</p>
+	</div>
+
+	<div class="age-card">
+		<h2 class="age-heading">Select Your Age Range</h2>
+		<a href="/congratulations" class="age-btn">50-75</a>
+		<a href="/congratulations" class="age-btn">76-80</a>
+		<a href="/congratulations" class="age-btn">81+</a>
+	</div>
 </div>
 
 <footer>
