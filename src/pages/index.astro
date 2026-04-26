@@ -24,7 +24,6 @@
 			flex-direction: column;
 		}
 
-		/* ── BANNER ── */
 		.banner-wrap {
 			width: 100%;
 			background: #ffffff;
@@ -37,7 +36,6 @@
 			margin: 16px auto;
 		}
 
-		/* ── ELIGIBILITY HEADING ── */
 		.elig-heading {
 			padding: 22px 20px 0;
 		}
@@ -69,7 +67,6 @@
 			margin-bottom: 0;
 		}
 
-		/* ── AGE CARD ── */
 		.age-card {
 			margin: 24px auto 0;
 			max-width: 420px;
@@ -110,13 +107,11 @@
 			transform: translateY(-1px);
 		}
 
-		/* ── MAIN WRAPPER ── */
 		.main {
 			flex: 1;
 			padding-bottom: 32px;
 		}
 
-		/* ── FOOTER ── */
 		footer {
 			padding: 16px 16px 20px;
 			font-size: 0.75rem;
@@ -132,24 +127,6 @@
 
 		footer p { margin-top: 6px; }
 	</style>
-
-	<!-- Meta Pixel Code -->
-	<script is:inline>
-	!function(f,b,e,v,n,t,s)
-	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-	n.queue=[];t=b.createElement(e);t.async=!0;
-	t.src=v;s=b.getElementsByTagName(e)[0];
-	s.parentNode.insertBefore(t,s)}(window, document,'script',
-	'https://connect.facebook.net/en_US/fbevents.js');
-	fbq('init', '1658273542083432');
-	fbq('track', 'PageView');
-	</script>
-	<noscript><img height="1" width="1" style="display:none"
-	src="https://www.facebook.com/tr?id=1658273542083432&ev=PageView&noscript=1"
-	/></noscript>
-	<!-- End Meta Pixel Code -->
 
 	<!-- Microsoft Clarity -->
 	<script type="text/javascript" is:inline>
@@ -176,9 +153,9 @@
 
 	<div class="age-card">
 		<h2 class="age-heading">Select Your Age Range</h2>
-		<a href="/congratulations" class="age-btn" id="age-btn-1" onclick="trackAge(event,'50-75')">50-75</a>
-		<a href="/congratulations" class="age-btn" id="age-btn-2" onclick="trackAge(event,'76-80')">76-80</a>
-		<a href="/congratulations" class="age-btn" id="age-btn-3" onclick="trackAge(event,'81+')">81+</a>
+		<a href="/congratulations" class="age-btn" id="age-btn-1">50-75</a>
+		<a href="/congratulations" class="age-btn" id="age-btn-2">76-80</a>
+		<a href="/congratulations" class="age-btn" id="age-btn-3">81+</a>
 	</div>
 </div>
 
@@ -186,18 +163,6 @@
 	<a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Use</a>
 	<p>Copyright &copy; 2026 &mdash; All rights reserved.</p>
 </footer>
-
-<script is:inline>
-function trackAge(e, range) {
-	e.preventDefault();
-	var dest = '/congratulations';
-	if (typeof fbq === 'function') {
-		fbq('track', 'Lead', { content_name: 'Age Selected', content_category: range });
-		fbq('trackCustom', 'AgeButtonClick', { age_range: range });
-	}
-	setTimeout(function() { window.location.href = dest; }, 300);
-}
-</script>
 
 </body>
 </html>
