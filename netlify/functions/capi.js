@@ -19,6 +19,7 @@ exports.handler = async (event) => {
     : event.headers['client-ip'] || '';
 
   const payload = {
+    test_event_code: 'TEST64305',
     data: [{
       event_name: eventName,
       event_time: Math.floor(Date.now() / 1000),
@@ -30,7 +31,7 @@ exports.handler = async (event) => {
     }]
   };
 
-  const apiUrl = `https://graph.facebook.com/v18.0/${pixelId}/events?access_token=${token}`;
+  const apiUrl = `https://graph.facebook.com/v20.0/${pixelId}/events?access_token=${token}`;
 
   const res = await fetch(apiUrl, {
     method: 'POST',
