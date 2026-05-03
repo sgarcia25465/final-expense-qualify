@@ -175,15 +175,15 @@
 	s.parentNode.insertBefore(t,s)}(window, document,'script',
 	'https://connect.facebook.net/en_US/fbevents.js');
 	fbq('init', '1706022430363404');
-	fbq('track', 'PageView');
+	var _pveid = Math.random().toString(36).slice(2) + Date.now();
+	var _leid  = Math.random().toString(36).slice(2) + Date.now() + 'l';
+	fbq('track', 'PageView', {}, {eventID: _pveid});
+	fbq('track', 'Lead',     {}, {eventID: _leid});
 	</script>
 	<noscript><img height="1" width="1" style="display:none"
 	src="https://www.facebook.com/tr?id=1706022430363404&ev=PageView&noscript=1"
 	/></noscript>
 	<!-- End Meta Pixel Code -->
-	<script is:inline>
-	fbq('track', 'Lead');
-	</script>
 
 	<!-- Microsoft Clarity -->
 	<script type="text/javascript" is:inline>
@@ -247,6 +247,24 @@
 			el.textContent = fmt(total);
 		}, 1000);
 	})();
+</script>
+
+<script is:inline>
+(function() {
+  var url = window.location.href;
+  var ua  = navigator.userAgent;
+  var pveid = Math.random().toString(36).slice(2) + Date.now();
+  var leid  = Math.random().toString(36).slice(2) + Date.now() + 'l';
+  function send(eventName, eventId) {
+    fetch('/.netlify/functions/capi', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ eventName: eventName, eventId: eventId, sourceUrl: url, userAgent: ua })
+    });
+  }
+  send('PageView', pveid);
+  send('Lead', leid);
+})();
 </script>
 
 </body>
