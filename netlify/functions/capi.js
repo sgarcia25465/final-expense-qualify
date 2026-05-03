@@ -26,8 +26,10 @@ exports.handler = async (event) => {
       event_id: eventId,
       event_source_url: sourceUrl,
       action_source: 'website',
-      client_user_agent: userAgent,
-      client_ip_address: clientIp,
+      user_data: {
+        client_user_agent: userAgent,
+        client_ip_address: clientIp,
+      }
     }]
   };
 
