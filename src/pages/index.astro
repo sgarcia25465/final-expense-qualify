@@ -189,6 +189,10 @@
 
 <script is:inline>
 (function() {
+  function getCookie(name) {
+    var m = document.cookie.match('(^|; )' + name + '=([^;]*)');
+    return m ? m[2] : undefined;
+  }
   var eid = Math.random().toString(36).slice(2) + Date.now();
   fetch('/.netlify/functions/capi', {
     method: 'POST',
@@ -198,6 +202,8 @@
       eventId: eid,
       sourceUrl: window.location.href,
       userAgent: navigator.userAgent,
+      fbc: getCookie('_fbc'),
+      fbp: getCookie('_fbp'),
     })
   });
 })();

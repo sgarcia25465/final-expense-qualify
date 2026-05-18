@@ -251,15 +251,21 @@
 
 <script is:inline>
 (function() {
+  function getCookie(name) {
+    var m = document.cookie.match('(^|; )' + name + '=([^;]*)');
+    return m ? m[2] : undefined;
+  }
   var url = window.location.href;
   var ua  = navigator.userAgent;
+  var fbc = getCookie('_fbc');
+  var fbp = getCookie('_fbp');
   var pveid = Math.random().toString(36).slice(2) + Date.now();
   var leid  = Math.random().toString(36).slice(2) + Date.now() + 'l';
   function send(eventName, eventId) {
     fetch('/.netlify/functions/capi', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ eventName: eventName, eventId: eventId, sourceUrl: url, userAgent: ua })
+      body: JSON.stringify({ eventName: eventName, eventId: eventId, sourceUrl: url, userAgent: ua, fbc: fbc, fbp: fbp })
     });
   }
   send('PageView', pveid);

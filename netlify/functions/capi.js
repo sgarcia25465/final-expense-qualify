@@ -13,10 +13,17 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: 'Invalid JSON' };
   }
 
-  const { eventName, eventId, sourceUrl, userAgent } = body;
+  const { eventName, eventId, sourceUrl, userAgent, fbc, fbp } = body;
   const clientIp = event.headers['x-forwarded-for']
     ? event.headers['x-forwarded-for'].split(',')[0].trim()
     : event.headers['client-ip'] || '';
+
+  const userData = {
+    client_user_agent: userAgent,
+    client_ip_address: clientIp,
+  };
+  if (fbc) userData.fbc = fbc;
+  if (fbp) userData.fbp = fbp;
 
   const payload = {
     test_event_code: 'TEST64305',
@@ -26,10 +33,7 @@ exports.handler = async (event) => {
       event_id: eventId,
       event_source_url: sourceUrl,
       action_source: 'website',
-      user_data: {
-        client_user_agent: userAgent,
-        client_ip_address: clientIp,
-      }
+      user_data: userData,
     }]
   };
 
