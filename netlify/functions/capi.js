@@ -26,7 +26,7 @@ exports.handler = async (event) => {
   if (fbp) userData.fbp = fbp;
 
   const payload = {
-    test_event_code: 'TEST64305',
+    test_event_code: 'TEST13545',
     data: [{
       event_name: eventName,
       event_time: Math.floor(Date.now() / 1000),
