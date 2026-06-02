@@ -9,156 +9,216 @@
 	<meta name="robots" content="noindex, nofollow" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 	<title>Congratulations — Burial Benefit</title>
 	<style>
 		* { margin: 0; padding: 0; box-sizing: border-box; }
 
 		body {
-			font-family: 'Outfit', Arial, sans-serif;
-			background: #ffffff;
+			font-family: 'Open Sans', Arial, sans-serif;
+			background: #eef2f7;
 			color: #111;
-			text-align: center;
 			min-height: 100vh;
 			display: flex;
 			flex-direction: column;
 		}
 
-		header {
-			padding: 14px 16px;
-			border-bottom: 1px solid #e0e0e0;
+		.site-header {
 			background: #fff;
+			border-bottom: 1px solid #dde4ee;
+			padding: 12px 24px;
 		}
 
-		header h1 {
-			font-size: 1.35rem;
+		.header-inner {
+			max-width: 780px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+		}
+
+		.phone-link {
+			display: block;
+			font-size: 1.25rem;
 			font-weight: 800;
-			color: #111;
-			letter-spacing: -0.02em;
+			color: #3d3b8e;
+			text-decoration: none;
+			text-align: right;
 		}
 
-		.content {
+		.phone-hours {
+			font-size: 0.8rem;
+			color: #666;
+			margin-top: 2px;
+			text-align: right;
+		}
+
+		.green-dot { color: #3a9b3a; }
+
+		.page-wrap {
 			flex: 1;
-			padding: 40px 24px 40px;
-			max-width: 600px;
+			max-width: 780px;
 			margin: 0 auto;
 			width: 100%;
+			padding: 32px 20px 48px;
+			text-align: center;
 		}
 
-		.congrats-heading {
+		.headline {
+			font-size: clamp(1.05rem, 3.5vw, 1.3rem);
+			font-weight: 800;
+			color: #111;
+			margin-bottom: 20px;
+			line-height: 1.4;
+		}
+
+		.divider {
+			border: none;
+			border-top: 1px solid #c8d4e0;
+			margin: 0 0 22px;
+		}
+
+		.support-text {
+			font-size: 1rem;
+			color: #333;
+			margin-bottom: 4px;
+		}
+
+		.elig-label {
+			font-size: 1rem;
+			font-weight: 700;
+			color: #111;
+			margin-bottom: 2px;
+		}
+
+		.benefit-amount {
 			font-size: clamp(2rem, 7vw, 2.8rem);
 			font-weight: 800;
 			color: #111;
-			margin-bottom: 18px;
+			margin-bottom: 24px;
+			line-height: 1.2;
 		}
 
-		.main-msg {
-			font-size: clamp(1rem, 3.5vw, 1.25rem);
-			font-weight: 500;
+		.benefit-amount .highlight {
+			background: #ffff00;
+			padding: 0 4px;
+		}
+
+		.congrats-card {
+			background: #fff;
+			border: 1px solid #dde4ee;
+			border-radius: 8px;
+			padding: 28px 24px 24px;
+			margin: 0 auto 28px;
+			max-width: 580px;
+		}
+
+		.congrats-title {
+			font-size: clamp(1.4rem, 5vw, 1.8rem);
+			font-weight: 800;
 			color: #111;
 			margin-bottom: 14px;
-			line-height: 1.5;
 		}
 
-		.main-msg .highlight-call {
-			font-style: italic;
-			font-weight: 700;
-			background: #ffff00;
-			padding: 0 3px;
-		}
-
-		.main-msg .burial-red {
-			font-weight: 800;
-			color: #cc0000;
-		}
-
-		.urgency-msg {
-			font-style: italic;
+		.congrats-msg {
 			font-size: clamp(0.95rem, 3vw, 1.05rem);
-			color: #444;
-			margin-bottom: 20px;
+			color: #111;
+			margin-bottom: 16px;
+			line-height: 1.6;
 		}
 
-		.urgency-msg .red-text {
+		.congrats-msg .yellow-hl {
+			background: #ffff00;
+			font-weight: 700;
+			font-style: italic;
+		}
+
+		.congrats-msg .red-bold {
 			color: #cc0000;
-		}
-
-		.countdown {
-			font-size: clamp(1.8rem, 6vw, 2.4rem);
 			font-weight: 800;
-			color: #cc0000;
-			margin-bottom: 22px;
-			letter-spacing: 0.04em;
 		}
 
 		.tap-msg {
-			font-size: clamp(1rem, 3.5vw, 1.15rem);
+			font-size: clamp(0.95rem, 3vw, 1rem);
 			font-weight: 700;
 			color: #111;
-			margin-bottom: 18px;
+			margin-bottom: 16px;
 		}
 
 		.call-btn {
 			display: block;
 			width: 100%;
-			max-width: 440px;
-			margin: 0 auto 28px;
-			padding: 22px 20px;
-			font-family: 'Outfit', Arial, sans-serif;
-			font-size: clamp(1.1rem, 4vw, 1.35rem);
+			max-width: 400px;
+			margin: 0 auto 16px;
+			padding: 18px 20px;
+			font-family: 'Open Sans', Arial, sans-serif;
+			font-size: clamp(1rem, 3.5vw, 1.2rem);
 			font-weight: 800;
-			background: #2e7d32;
+			background: #3a9b3a;
 			color: #fff;
 			border: none;
-			border-radius: 10px;
+			border-radius: 6px;
 			cursor: pointer;
 			text-decoration: none;
 			transition: background 0.15s, transform 0.1s;
-			box-shadow: 0 6px 18px rgba(46,125,50,0.35);
 		}
 
 		.call-btn:hover, .call-btn:active {
-			background: #1b5e20;
+			background: #2d7a2d;
 			transform: translateY(-1px);
 		}
 
-		.social-proof {
-			display: flex;
-			align-items: flex-start;
-			gap: 10px;
-			max-width: 440px;
-			margin: 0 auto;
-			text-align: left;
+		.no-hold {
+			font-size: 0.95rem;
+			color: #111;
 		}
 
-		.bubble-icon {
-			font-size: 1.4rem;
-			flex-shrink: 0;
-			margin-top: 2px;
+		.no-hold .note-label {
+			color: #cc0000;
+			font-weight: 800;
+		}
+
+		.review-wrap {
+			max-width: 580px;
+			margin: 0 auto;
+		}
+
+		.review-card {
+			background: #cde8f5;
+			border-radius: 12px;
+			padding: 22px 24px;
+			transition: opacity 0.4s ease;
+		}
+
+		.stars {
+			font-size: 1.3rem;
+			margin-bottom: 10px;
+		}
+
+		.review-text {
+			font-size: clamp(0.95rem, 3vw, 1.05rem);
+			color: #111;
+			margin-bottom: 8px;
+			line-height: 1.5;
+		}
+
+		.review-author {
+			font-size: 0.9rem;
 			color: #555;
 		}
 
-		.proof-text {
-			background: #ffff00;
-			padding: 10px 14px;
-			border-radius: 6px;
-			font-size: clamp(0.9rem, 3vw, 1rem);
-			font-weight: 700;
-			color: #111;
-			line-height: 1.4;
-		}
-
 		footer {
+			text-align: center;
 			padding: 16px 16px 20px;
-			font-size: 0.75rem;
-			color: #aaa;
-			border-top: 1px solid #eee;
+			font-size: 0.78rem;
+			color: #888;
+			border-top: 1px solid #dde4ee;
 		}
 
 		footer a {
-			color: #aaa;
+			color: #555;
 			text-decoration: underline;
-			margin: 0 6px;
+			margin: 0 8px;
 		}
 
 		footer p { margin-top: 6px; }
@@ -197,56 +257,65 @@
 </head>
 <body>
 
+<header class="site-header">
+	<div class="header-inner">
+		<div>
+			<a href="tel:+18333837370" class="phone-link">(833) 383-7370</a>
+			<div class="phone-hours"><span class="green-dot">●</span> Mon-Fri 9am-7pm EST</div>
+		</div>
+	</div>
+</header>
 
-<div class="content">
-	<h2 class="congrats-heading">Congratulations!</h2>
+<div class="page-wrap">
+	<p class="headline">ATTENTION: Seniors Have a Limited Time To Claim<br>Their Burial Benefit</p>
+	<hr class="divider" />
+	<p class="support-text">Get the help and support you deserve!</p>
+	<p class="elig-label">Check Eligibility for a</p>
+	<p class="benefit-amount"><span class="highlight">$25,000</span> Benefit!</p>
 
-	<p class="main-msg">
-		Make a quick <span class="highlight-call">call</span> to claim your $1/day <span class="burial-red">BURIAL BENEFIT!</span>
-	</p>
+	<div class="congrats-card">
+		<p class="congrats-title">Congratulations!</p>
+		<p class="congrats-msg">Make a quick <span class="yellow-hl">2-minute phone call</span> to claim your <span class="red-bold">$25,000 BURIAL BENEFIT!</span></p>
+		<p class="tap-msg">Tap below to speak with a benefits specialist</p>
+		<a href="tel:+18333837370" class="call-btn" id="call-btn" onclick="trackContact()">Call Now (833) 383-7370</a>
+		<p class="no-hold"><span class="note-label">NOTE:</span> Currently no hold time</p>
+	</div>
 
-	<p class="urgency-msg">
-		Hurry! Secure this benefit <span class="red-text">before time runs out...</span>
-	</p>
-
-	<div class="countdown" id="countdown">03:00</div>
-
-	<p class="tap-msg">Tap below to get your burial benefit 👇</p>
-
-	<a href="tel:+18333837370" class="call-btn" id="call-btn" onclick="trackContact()">Call Now (833) 383-7370</a>
-
-	<div class="social-proof">
-		<span class="bubble-icon">💬</span>
-		<div class="proof-text">Mary got a $20,000 final expense benefit for $1/day in just 15 minutes.</div>
+	<div class="review-wrap">
+		<div class="review-card" id="review-card">
+			<div class="stars">⭐⭐⭐⭐⭐</div>
+			<p class="review-text" id="review-text">"The process was very quick and easy. My husband claimed it also."</p>
+			<p class="review-author" id="review-author">— Jane Davis</p>
+		</div>
 	</div>
 </div>
 
 <footer>
-	<a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Use</a>
+	<a href="/privacy">Privacy Policy</a> &nbsp;|&nbsp; <a href="/terms">Terms &amp; Conditions</a>
 	<p>Copyright &copy; 2026 &mdash; All rights reserved.</p>
 </footer>
 
 <script is:inline>
-	(function () {
-		var total = 180;
-		var el = document.getElementById('countdown');
-
-		function fmt(s) {
-			var m = Math.floor(s / 60);
-			var sec = s % 60;
-			return (m < 10 ? '0' : '') + m + ':' + (sec < 10 ? '0' : '') + sec;
-		}
-
-		var iv = setInterval(function () {
-			total--;
-			if (total <= 0) {
-				el.textContent = '00:00';
-				clearInterval(iv);
-				return;
-			}
-			el.textContent = fmt(total);
-		}, 1000);
-	})();
+(function() {
+	var reviews = [
+		{ text: '"The process was very quick and easy. My husband claimed it also."', author: '— Jane Davis' },
+		{ text: '"Very impressed on how helpful and supportive the agent was!"', author: '— John Summerville' },
+		{ text: '"I got my coverage set up in under 10 minutes. Amazing service!"', author: '— Patricia M.' },
+	];
+	var idx = 0;
+	var card = document.getElementById('review-card');
+	var textEl = document.getElementById('review-text');
+	var authorEl = document.getElementById('review-author');
+	setInterval(function() {
+		idx = (idx + 1) % reviews.length;
+		card.style.opacity = '0';
+		setTimeout(function() {
+			textEl.textContent = reviews[idx].text;
+			authorEl.textContent = reviews[idx].author;
+			card.style.opacity = '1';
+		}, 400);
+	}, 4000);
+})();
 </script>
 
 <script is:inline>
