@@ -9,120 +9,142 @@
 	<meta name="robots" content="noindex, nofollow" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 	<title>Check Eligibility — Burial Benefit</title>
 	<style>
 		* { margin: 0; padding: 0; box-sizing: border-box; }
 
 		body {
-			font-family: 'Outfit', Arial, sans-serif;
-			background: #ffffff;
+			font-family: 'Open Sans', Arial, sans-serif;
+			background: #eef2f7;
 			color: #111;
-			text-align: center;
 			min-height: 100vh;
 			display: flex;
 			flex-direction: column;
 		}
 
-		.banner-wrap {
+		.page-wrap {
+			flex: 1;
+			max-width: 780px;
+			margin: 0 auto;
 			width: 100%;
-			background: #ffffff;
+			padding: 32px 20px 48px;
+			text-align: center;
 		}
 
-		.banner-wrap img {
-			width: calc(100% - 32px);
-			max-width: 720px;
-			display: block;
-			margin: 16px auto;
+		.headline {
+			font-size: clamp(1.05rem, 3.5vw, 1.3rem);
+			font-weight: 800;
+			color: #111;
+			margin-bottom: 20px;
+			line-height: 1.4;
 		}
 
-		.elig-heading {
-			padding: 22px 20px 0;
+		.divider {
+			border: none;
+			border-top: 1px solid #c8d4e0;
+			margin: 0 0 22px;
 		}
 
-		.elig-small {
-			font-size: clamp(0.95rem, 3vw, 1.1rem);
-			font-weight: 500;
+		.support-text {
+			font-size: 1rem;
 			color: #333;
 			margin-bottom: 4px;
 		}
 
-		.elig-amount {
-			font-size: clamp(2.4rem, 8vw, 3.2rem);
-			font-weight: 800;
+		.elig-label {
+			font-size: 1rem;
+			font-weight: 700;
 			color: #111;
-			line-height: 1.1;
 			margin-bottom: 2px;
 		}
 
-		.elig-amount .yellow-hl {
+		.benefit-amount {
+			font-size: clamp(2rem, 7vw, 2.8rem);
+			font-weight: 800;
+			color: #111;
+			margin-bottom: 28px;
+			line-height: 1.2;
+		}
+
+		.benefit-amount .highlight {
 			background: #ffff00;
-			padding: 0 6px;
+			padding: 0 4px;
 		}
 
-		.elig-plan {
-			font-size: clamp(1.6rem, 5.5vw, 2.2rem);
-			font-weight: 800;
+		.age-question {
+			font-size: clamp(1rem, 3.5vw, 1.15rem);
+			font-weight: 700;
 			color: #111;
-			margin-bottom: 0;
-		}
-
-		.age-card {
-			margin: 24px auto 0;
-			max-width: 420px;
-			width: calc(100% - 32px);
-			background: linear-gradient(160deg, #d6eaf8 0%, #e8f4fc 60%, #cde4f5 100%);
-			border-radius: 18px;
-			padding: 24px 20px 28px;
-		}
-
-		.age-heading {
-			font-size: clamp(1.3rem, 5vw, 1.6rem);
-			font-weight: 800;
-			color: #111;
-			margin-bottom: 20px;
+			margin-bottom: 16px;
 		}
 
 		.age-btn {
 			display: block;
 			width: 100%;
+			max-width: 580px;
 			margin: 0 auto 12px;
-			padding: 16px;
-			font-family: 'Outfit', Arial, sans-serif;
-			font-size: 1.15rem;
+			padding: 18px 20px;
+			font-family: 'Open Sans', Arial, sans-serif;
+			font-size: 1.1rem;
 			font-weight: 700;
-			background: #5b9fd4;
+			background: #3d3b8e;
 			color: #fff;
 			border: none;
-			border-radius: 8px;
+			border-radius: 50px;
 			cursor: pointer;
 			text-decoration: none;
 			transition: background 0.15s, transform 0.1s;
 		}
 
-		.age-btn:last-child { margin-bottom: 0; }
+		.age-btn:last-of-type { margin-bottom: 0; }
 
 		.age-btn:hover, .age-btn:active {
-			background: #3a7fbf;
+			background: #2e2c6e;
 			transform: translateY(-1px);
 		}
 
-		.main {
-			flex: 1;
-			padding-bottom: 32px;
+		.review-wrap {
+			margin: 32px auto 0;
+			max-width: 580px;
+		}
+
+		.review-card {
+			background: #cde8f5;
+			border-radius: 12px;
+			padding: 22px 24px;
+			transition: opacity 0.4s ease;
+		}
+
+		.stars {
+			font-size: 1.3rem;
+			margin-bottom: 10px;
+		}
+
+		.review-text {
+			font-size: clamp(0.95rem, 3vw, 1.05rem);
+			color: #111;
+			margin-bottom: 8px;
+			line-height: 1.5;
+		}
+
+		.review-author {
+			font-size: 0.9rem;
+			color: #555;
 		}
 
 		footer {
+			text-align: center;
 			padding: 16px 16px 20px;
-			font-size: 0.75rem;
-			color: #aaa;
-			border-top: 1px solid #eee;
+			font-size: 0.78rem;
+			color: #888;
+			border-top: 1px solid #dde4ee;
 		}
 
 		footer a {
-			color: #aaa;
+			color: #555;
 			text-decoration: underline;
-			margin: 0 6px;
+			margin: 0 8px;
 		}
 
 		footer p { margin-top: 6px; }
@@ -163,29 +185,55 @@
 </head>
 <body>
 
-<div class="banner-wrap">
-	<img src="/images/socialsecurity.png" alt="Burial Coverage Benefit" />
-</div>
+<div class="page-wrap">
+	<p class="headline">ATTENTION: Seniors Have a Limited Time To Claim<br>Their Burial Benefit</p>
+	<hr class="divider" />
+	<p class="support-text">Get the help and support you deserve!</p>
+	<p class="elig-label">Check Eligibility for a</p>
+	<p class="benefit-amount"><span class="highlight">$25,000</span> Benefit!</p>
 
-<div class="main">
-	<div class="elig-heading">
-		<p class="elig-small">Check Eligibility for a</p>
-		<p class="elig-amount"><span class="yellow-hl">$25,000</span></p>
-		<p class="elig-plan">Burial Plan</p>
-	</div>
+	<p class="age-question">Please select your age range?</p>
 
-	<div class="age-card">
-		<h2 class="age-heading">Select Your Age Range</h2>
-		<a href="https://globalvisitlog.com/cf/click/1" class="age-btn" id="age-btn-1">50-75</a>
-		<a href="https://globalvisitlog.com/cf/click/1" class="age-btn" id="age-btn-2">76-80</a>
-		<a href="https://globalvisitlog.com/cf/click/1" class="age-btn" id="age-btn-3">81+</a>
+	<a href="https://globalvisitlog.com/cf/click/1" class="age-btn" id="age-btn-1">50 - 75</a>
+	<a href="https://globalvisitlog.com/cf/click/1" class="age-btn" id="age-btn-2">76 - 80</a>
+	<a href="https://globalvisitlog.com/cf/click/1" class="age-btn" id="age-btn-3">81+</a>
+
+	<div class="review-wrap">
+		<div class="review-card" id="review-card">
+			<div class="stars">⭐⭐⭐⭐⭐</div>
+			<p class="review-text" id="review-text">"Very impressed on how helpful and supportive the agent was!"</p>
+			<p class="review-author" id="review-author">— John Summerville</p>
+		</div>
 	</div>
 </div>
 
 <footer>
-	<a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Use</a>
+	<a href="/privacy">Privacy Policy</a> &nbsp;|&nbsp; <a href="/terms">Terms &amp; Conditions</a>
 	<p>Copyright &copy; 2026 &mdash; All rights reserved.</p>
 </footer>
+
+<script is:inline>
+(function() {
+	var reviews = [
+		{ text: '"Very impressed on how helpful and supportive the agent was!"', author: '— John Summerville' },
+		{ text: '"I qualified in just a few minutes. The agent walked me through everything."', author: '— Margaret T.' },
+		{ text: '"Couldn\'t believe how easy it was to get coverage. Highly recommend!"', author: '— Robert H.' },
+	];
+	var idx = 0;
+	var card = document.getElementById('review-card');
+	var textEl = document.getElementById('review-text');
+	var authorEl = document.getElementById('review-author');
+	setInterval(function() {
+		idx = (idx + 1) % reviews.length;
+		card.style.opacity = '0';
+		setTimeout(function() {
+			textEl.textContent = reviews[idx].text;
+			authorEl.textContent = reviews[idx].author;
+			card.style.opacity = '1';
+		}, 400);
+	}, 4000);
+})();
+</script>
 
 <script is:inline>
 (function() {
