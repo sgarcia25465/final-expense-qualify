@@ -276,7 +276,7 @@
 		<p class="congrats-msg">Make a quick <span class="yellow-hl">2-minute phone call</span> to claim your <span class="red-bold">$40,000 BURIAL BENEFIT!</span></p>
 		<p class="tap-msg">Tap below to speak with a benefits specialist</p>
 		<a href="tel:+18333837370" class="call-btn" id="call-btn" onclick="trackContact()">Call Now (833) 383-7370</a>
-		<p class="no-hold"><span class="note-label">NOTE:</span> Currently no hold time</p>
+		<p class="no-hold"><span class="note-label">NOTE:</span> We are currently experiencing high call volume. We will hold your spot for the next <span id="hold-timer">90</span> seconds.</p>
 	</div>
 
 	<div class="review-wrap">
@@ -313,6 +313,18 @@
 			card.style.opacity = '1';
 		}, 400);
 	}, 4000);
+
+	var timerEl = document.getElementById('hold-timer');
+	if (timerEl) {
+		var remaining = 90;
+		var countdown = setInterval(function() {
+			remaining--;
+			if (remaining <= 0) {
+				remaining = 90;
+			}
+			timerEl.textContent = remaining;
+		}, 1000);
+	}
 })();
 </script>
 
