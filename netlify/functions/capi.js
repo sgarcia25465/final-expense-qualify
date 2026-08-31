@@ -45,7 +45,7 @@ exports.handler = async (event) => {
   });
 
   const result = await res.json();
-  console.log('Meta CAPI response:', JSON.stringify(result));
+  console.log('Meta CAPI response:', eventName, eventId, JSON.stringify(result));
 
   return {
     statusCode: 200,
